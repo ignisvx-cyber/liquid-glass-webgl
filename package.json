@@ -1,7 +1,7 @@
 {
   "name": "@ignisvx/liquid-glass-webgl",
-  "version": "0.1.0",
-  "description": "Reusable React WebGL Liquid Glass refraction effect, adapted from Archis Vaze (MIT)",
+  "version": "0.2.0",
+  "description": "Reusable React liquid-glass buttons and WebGL refraction surface for Lovable",
   "type": "module",
   "main": "./src/index.js",
   "module": "./src/index.js",
@@ -11,14 +11,17 @@
       "types": "./src/index.d.ts",
       "import": "./src/index.js",
       "default": "./src/index.js"
-    }
+    },
+    "./styles.css": "./src/styles.css"
   },
   "files": [
     "src",
     "LICENSE",
     "LIBRARY.md"
   ],
-  "sideEffects": false,
+  "sideEffects": [
+    "./src/styles.css"
+  ],
   "license": "MIT",
   "repository": {
     "type": "git",
@@ -27,11 +30,11 @@
   "keywords": [
     "react",
     "liquid-glass",
+    "glass-button",
     "webgl",
     "refraction",
-    "ios26",
-    "glassmorphism",
-    "lovable"
+    "lovable",
+    "glassmorphism"
   ],
   "peerDependencies": {
     "react": ">=18 <20"
@@ -42,7 +45,7 @@
   },
   "scripts": {
     "test": "node --test tests/*.test.mjs",
-    "check": "node --check src/index.js && node --check src/LiquidGlass.js && node --check src/gl.js && node --check src/shaders.js"
+    "check": "node --check src/index.js && node --check src/LiquidGlass.js && node --check src/LiquidGlassButton.js && node --check src/gl.js && node --check src/shaders.js"
   },
   "engines": {
     "node": ">=18"
