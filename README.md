@@ -1,4 +1,22 @@
-# Liquid Glass
+# Liquid Glass: React library + original WebGL demo
+
+**Reusable React component for Lovable sites.** The npm package can be installed **directly from this GitHub repository**; no copying files between site repositories and no npm publishing required.
+
+```bash
+npm install github:ignisvx-cyber/liquid-glass-webgl
+```
+
+```jsx
+import { LiquidGlass } from "@ignisvx/liquid-glass-webgl";
+```
+
+**[React / Lovable installation, API, example and limitations → LIBRARY.md](./LIBRARY.md)**
+
+The WebGL shader is ported from the original demo below and runs natively without Three.js as a runtime dependency. **It refracts a matching background image, not arbitrary HTML behind the component.** For the correct result, configure the parent hero's background with `cover center` and pass the same image URL to `backgroundImage`. A CSS fallback covers browsers without WebGL.
+
+---
+
+## Original project (credit: Archis Vaze, MIT)
 
 An interactive demo of an **iOS 26 style Liquid Glass** effect for the web.
 
