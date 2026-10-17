@@ -1,0 +1,55 @@
+.ignis-lg-surface {
+  transition: transform 180ms ease, box-shadow 180ms ease;
+}
+.ignis-lg-surface:has(> div > .ignis-lg-control:not(:disabled):not([aria-disabled="true"]):hover) {
+  transform: translateY(-1px);
+}
+.ignis-lg-surface:has(> div > .ignis-lg-control:not(:disabled):not([aria-disabled="true"]):active) {
+  transform: translateY(0);
+}
+.ignis-lg-control:focus-visible {
+  outline: 2px solid var(--ignis-lg-focus, #90cdf4);
+  outline-offset: -4px;
+}
+.ignis-lg-label {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.ignis-lg-icon {
+  display: inline-flex;
+  flex: 0 0 auto;
+  align-items: center;
+  justify-content: center;
+}
+.ignis-lg-icon > svg {
+  width: 1.2em;
+  height: 1.2em;
+}
+.ignis-lg-spinner {
+  display: inline-block;
+  flex: 0 0 auto;
+  width: 1em;
+  height: 1em;
+  border: 2px solid currentColor;
+  border-right-color: transparent;
+  border-radius: 50%;
+  animation: ignis-lg-spin 800ms linear infinite;
+}
+.ignis-lg-sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+@keyframes ignis-lg-spin {
+  to { transform: rotate(360deg); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .ignis-lg-surface { transition: none; }
+  .ignis-lg-spinner { animation: none; }
+}

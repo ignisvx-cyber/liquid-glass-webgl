@@ -1,34 +1,27 @@
-# React Library Integration (Lovable)
+# IGNIS Liquid Glass buttons — Lovable integration
 
-This repository contains both the original Archis Vaze WebGL/SVG demos and **an installable React component**.
-
-## Direct installation
+This repository is a public, installable ESM React 18/19 library.
 
 ```bash
-npm install github:ignisvx-cyber/liquid-glass-webgl
+bun add github:ignisvx-cyber/liquid-glass-webgl
 ```
-
-Then:
 
 ```jsx
-import { LiquidGlass } from "@ignisvx/liquid-glass-webgl";
+import { LiquidGlassButton, LiquidGlassIconButton, LiquidGlass } from "@ignisvx/liquid-glass-webgl";
+import "@ignisvx/liquid-glass-webgl/styles.css";
 ```
 
-Consult [LIBRARY.md](./LIBRARY.md) for the complete API and [examples/LovableHero.jsx](./examples/LovableHero.jsx) for a working integration pattern.
+## Prompt to paste into Lovable
 
-## Prompt for Lovable
+> Instale a dependência pública do GitHub `github:ignisvx-cyber/liquid-glass-webgl`. Importe `LiquidGlassButton` e/ou `LiquidGlassIconButton` de `@ignisvx/liquid-glass-webgl` e importe uma vez `@ignisvx/liquid-glass-webgl/styles.css`. Consulte `LIBRARY.md` e `examples/LovableButtons.jsx`. Aplique o estilo aos CTAs indicados, preservando o layout, links, acessibilidade e marca. Para refração WebGL real, use a mesma imagem do hero com cover/center e informe `backgroundImage` e `backgroundContainerRef`. Se o fundo for vídeo, gradiente, HTML dinâmico ou a imagem não puder ser carregada, use o fallback CSS sem afirmar que há refração real do DOM. Não recrie a biblioteca e não substitua seu shader WebGL por um simples blur quando houver imagem compatível. Execute build e verifique desktop/mobile e cliques.
 
-> Install my public GitHub dependency `github:ignisvx-cyber/liquid-glass-webgl` and import `LiquidGlass` from `@ignisvx/liquid-glass-webgl`. Use `examples/LovableHero.jsx` as a reference. Apply realistic refractive Liquid Glass to the CTA button and floating navigation of this website, matching the backdrop hero image to the `backgroundImage` prop. Keep the source GLSL shader effect, the CSS fallback, and the site's existing visual design. Do not replace the effect with a basic backdrop-filter.
+## Components & requirements
 
-### How it works
+- `LiquidGlassButton`: native button by default; anchor when `href` is provided. Size sm/md/lg, shape pill/rounded/circle, variants clear/frosted/tinted, loading and disabled.
+- `LiquidGlassIconButton`: circular icon action (always provide an accessible `aria-label`).
+- `LiquidGlass`: configurable low-level refractive container.
+- CSS import provides focus-visible, hover, loading and reduced-motion behavior.
+- Existing demo HTML/SVG/WebGL files remain untouched.
+- React 18/19; no Three.js runtime dependency; WebGL 1; CSS fallback. Images must be properly licensed and CORS-readable.
 
-- Native WebGL1 renderer with optical refraction adapted from Archis Vaze's original GLSL shader.
-- **No additional Three.js runtime dependency** in the React package.
-- React 18/19 compatible, TypeScript definitions provided, no package build step.
-- Browser compatibility: modern browsers with WebGL, CSS fallback if WebGL fails.
-- **Limitation:** accurately refracts a matched *image texture*, not arbitrary animated or live DOM behind the element.
-- The original demo in `webgl.html` still uses Three.js and has not been modified.
-
-### Licenses
-
-Code: MIT © 2026 Archis Vaze, included in `LICENSE`. The example background photos are separate and are not automatically licensed for your projects.
+Reference: [LIBRARY.md](LIBRARY.md).
